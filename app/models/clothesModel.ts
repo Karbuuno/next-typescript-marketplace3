@@ -2,6 +2,12 @@ import mongoose, { Schema, Document, models, model, Model } from "mongoose";
 // work interface
 interface clothesDocument extends Document {
   images: string[];
+  name: string;
+  description: string;
+  price: number;
+  color: string;
+  brand: string;
+  size: string;
 }
 
 //create clothes schema
@@ -9,6 +15,10 @@ const clothesSchema = new Schema(
   {
     name: {
       type: String,
+      required: true,
+    },
+    images: {
+      type: [String],
       required: true,
     },
     description: {

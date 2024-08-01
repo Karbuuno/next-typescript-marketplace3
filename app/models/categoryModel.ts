@@ -1,7 +1,7 @@
 import { Schema, Document, models, model, Model } from "mongoose";
 // work interface
 interface categoryDocument extends Document {
-  images: string[];
+  name: string[];
 }
 
 //create category schema

@@ -2,6 +2,13 @@ import mongoose, { Schema, Document, models, model, Model } from "mongoose";
 // work interface
 interface shoesDocument extends Document {
   images: string[];
+  name: string;
+  description: string;
+  price: number;
+  color: string;
+  brand: string;
+  condition: string;
+  size: string;
 }
 
 //create shoes schema

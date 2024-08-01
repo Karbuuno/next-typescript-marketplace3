@@ -1,11 +1,18 @@
 import mongoose, { Schema, Document, models, model, Model } from "mongoose";
 // work interface
-interface clothesDocument extends Document {
+interface tablewareDocument extends Document {
   images: string[];
+  name: string;
+  description: string;
+  price: number;
+  size: string;
+  color: string;
+  brand: string;
+  condition: string;
 }
 
-//create clothes schema
-const clothesSchema = new Schema(
+//create tableware schema
+const tablewareSchema = new Schema(
   {
     name: {
       type: String,
@@ -21,19 +28,14 @@ const clothesSchema = new Schema(
     color: {
       type: String,
     },
-    material: {
-      type: String,
-      required: true,
-    },
+
     brand: {
       type: String,
     },
     dimensions: {
       type: String,
     },
-    weight: {
-      type: Number,
-    },
+
     condition: {
       type: String,
       required: true,
@@ -55,5 +57,5 @@ const clothesSchema = new Schema(
   }
 );
 
-const clothesModel = models.Clothes || model("Clothes", clothesSchema);
-export default clothesModel as Model<clothesDocument>;
+const tablewareModel = models.Tableware || model("Tableware", tablewareSchema);
+export default tablewareModel as Model<tablewareDocument>;

@@ -1,9 +1,12 @@
 import { Schema, Document, models, model, Model } from "mongoose";
-// work interface
+// User interface
 interface userDocument extends Document {
-  images: string[];
+  name: string;
+  password: string;
+  confirmPassword: number;
+  role: string;
+  image: string;
 }
-
 //create user schema
 const userSchema = new Schema(
   {
@@ -24,6 +27,9 @@ const userSchema = new Schema(
     confirmPassword: {
       type: String,
       required: true,
+    },
+    image: {
+      type: String,
     },
     role: {
       type: String,
